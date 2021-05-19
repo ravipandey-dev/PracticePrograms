@@ -58,4 +58,18 @@ public class LinkedListOperations {
         }
         System.out.print("END");
     }
+
+    public int findMiddleNode(){
+        Node fastptr=head;
+        Node slowptr=head;
+        if(head!=null){
+            while(fastptr!=null && fastptr.next!=null){
+                fastptr=fastptr.next.next;
+                slowptr=slowptr.next;
+            }
+            System.out.println("Middle Node is :" + slowptr.data);
+            return slowptr.data;
+        }
+        return -1;
+    }
 }
