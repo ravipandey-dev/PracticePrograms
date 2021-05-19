@@ -1,6 +1,7 @@
 package com.test;
 
 import com.company.LinkedListOperations;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class LinkedListTest {
@@ -13,6 +14,15 @@ public class LinkedListTest {
         list.add(3);
         list.add(4);
         list.add(5);
+        list.traverse();
+    }
+
+    @Test
+    public void testRemove(){
+        addDataToList();
+        Assert.assertTrue(list.remove(5));
+        System.out.println();
+        System.out.println("----After Remove----");
         list.traverse();
     }
 }

@@ -3,6 +3,30 @@ package com.company;
 public class LinkedListOperations {
 
     Node head;
+
+    public boolean remove(int i) {
+        Node node=head;
+
+        if(node==null){
+            return false;
+        }
+        //remove head node
+        if(node.data==i){
+            head=node.next;
+            return true;
+        }
+        //remove any other node
+        while(node.next!=null)
+        {
+            if(node.next.data==i){
+                node.next=node.next.next;
+                return true;
+            }
+            node=node.next;
+        }
+        return false;
+    }
+
     class Node{
         int data;
         Node next;
